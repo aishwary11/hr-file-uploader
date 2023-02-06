@@ -1,4 +1,4 @@
-import { Button } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
@@ -23,6 +23,7 @@ function App() {
         Upload
         <input hidden accept="*" onChange={uploadMultipleFiles} multiple type="file" />
       </Button>
+      <TextField label="Outlined" placeholder="Please enter description" variant="outlined" style={{ width: '600px' }} />
     </div>
   );
 }
