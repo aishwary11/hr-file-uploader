@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
@@ -18,7 +19,10 @@ function App() {
   return (
     <div className='App'>
       <ToastContainer theme="colored" />
-      <input type="file" accept='*' onChange={(e) => uploadMultipleFiles(e)} multiple />
+      <Button variant="contained" component="label">
+        Upload
+        <input hidden accept="*" onChange={uploadMultipleFiles} multiple type="file" />
+      </Button>
     </div>
   );
 }
