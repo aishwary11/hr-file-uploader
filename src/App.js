@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
 function App() {
+  const maxFiles = 5;
+  const uploadMultipleFiles = (e) => {
+    if (Array.from(e.target.files).length > maxFiles) {
+      e.preventDefault();
+      toast.error(`Cannot upload files more than ${maxFiles}`, {
+        autoClose: 3000,
+        position: toast.POSITION.TOP_RIGHT
+      });
+      return;
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <ToastContainer theme="colored" />
+      <input type="file" accept='*' onChange={(e) => uploadMultipleFiles(e)} multiple />
     </div>
   );
 }
