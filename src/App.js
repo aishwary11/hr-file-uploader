@@ -17,14 +17,6 @@ function App() {
         <Route path='/edit:id' />
       </Routes>
     </>
-    // <div className='App'>
-    //   <ToastContainer theme="colored" />
-    //   <Button variant="contained" component="label">
-    //     Upload
-    //     <input hidden accept="*" onChange={uploadMultipleFiles} multiple type="file" />
-    //   </Button>
-    //   <TextField label="Outlined" placeholder="Please enter description" variant="outlined" style={{ width: '600px' }} />
-    // </div>
   );
 }
 

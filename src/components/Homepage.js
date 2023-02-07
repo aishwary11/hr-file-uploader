@@ -16,7 +16,7 @@ const Homepage = () => {
         Upload
         <input hidden accept="*" onChange={uploadMultipleFiles} multiple type="file" />
       </Button>
-      <TextField label="Outlined" placeholder="Please enter description" variant="outlined" style={{ width: '600px' }} />
+      <TextField placeholder="Please enter description" variant="outlined" style={{ width: '600px' }} />
     </>
   );
 };
