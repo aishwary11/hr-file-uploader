@@ -1,4 +1,4 @@
-import { AppBar, Box, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Toolbar } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -7,12 +7,10 @@ const Header = () => {
     <Box>
       <AppBar position="static">
         <Toolbar>
-          <Typography component="p" >
+          <div className='nav-header-link'>
             <Link to="/list">List</Link>
-          </Typography>
-          <Typography>
-            <Link to="/edit:id">Edit</Link>
-          </Typography>
+            {/* <Link to="/edit:id">Edit</Link> */}
+          </div>
         </Toolbar>
       </AppBar>
     </Box>
