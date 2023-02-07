@@ -1,30 +1,30 @@
-import { Button, TextField } from '@mui/material';
-import { toast, ToastContainer } from 'react-toastify';
+import { List } from '@mui/material';
+import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
+import Header from './components/Header';
+import Homepage from './components/Homepage';
 
 function App() {
-  const maxFiles = 5;
-  const uploadMultipleFiles = (e) => {
-    if (Array.from(e.target.files).length > maxFiles) {
-      e.preventDefault();
-      toast.error(`Cannot upload files more than ${maxFiles}`, {
-        autoClose: 3000,
-        position: toast.POSITION.TOP_RIGHT
-      });
-      return;
-    }
-  };
-
   return (
-    <div className='App'>
+    <>
       <ToastContainer theme="colored" />
-      <Button variant="contained" component="label">
-        Upload
-        <input hidden accept="*" onChange={uploadMultipleFiles} multiple type="file" />
-      </Button>
-      <TextField label="Outlined" placeholder="Please enter description" variant="outlined" style={{ width: '600px' }} />
-    </div>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Homepage />} />
+        <Route path='/list' element={<List />} />
+        <Route path='/edit:id' />
+      </Routes>
+    </>
+    // <div className='App'>
+    //   <ToastContainer theme="colored" />
+    //   <Button variant="contained" component="label">
+    //     Upload
+    //     <input hidden accept="*" onChange={uploadMultipleFiles} multiple type="file" />
+    //   </Button>
+    //   <TextField label="Outlined" placeholder="Please enter description" variant="outlined" style={{ width: '600px' }} />
+    // </div>
   );
 }
 
